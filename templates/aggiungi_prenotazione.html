@@ -13,9 +13,20 @@
         <label for="cognome">Cognome:</label>
         <input type="text" id="cognome" name="cognome" required><br>
         <label for="sport">Sport:</label>
-        <input type="text" id="sport" name="sport" required><br>
-        <label for="sport">note opzionali:</label>
-        <input type="text" id="note opzionali" name="note opzionali" required><br>
+        <select id="sport" name="sport" required>
+            <option value="" disabled selected>seleziona uno sport</option>
+            <option value="calcio">calcio</option>
+            <option value="basket">basket</option>
+            <option value="tennis">tennis</option>
+            <option value="nuoto">nuoto</option>
+            <option value="ciclismo">ciclismo</option>
+            <option value="pallavolo">pallavolo</option>
+            <option value="rugby">rugby</option>
+            <option value="ginnastica">ginnastica</option>
+        </select><br>
+
+        <label>note opzionali:</label>
+        <input type="text" name="note opzionali" required><br>
         <button type="submit">Aggiungi</button>
     </form>
     <a href="{{ url_for('home') }}">Torna alla home</a>
