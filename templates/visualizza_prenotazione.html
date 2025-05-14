@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizza Prenotazioni</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Elenco Prenotazioni</h1>
+    <ul>
+        {% for prenotazione in prenotazioni %}
+        <li>
+            <b>Nome:</b> {{ prenotazione['nome'] }}<br>
+            <b>Cognome:</b> {{ prenotazione['cognome'] }}<br>
+            <b>Sport:</b> {{ prenotazione['sport'] }}<br>
+            <b>Data e Ora:</b> {{ prenotazione['data e ora'] }}<br>
+            <b>Note Opzionali:</b> {{ prenotazione['note opzionali'] }}
+        </li>
+        <hr>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Torna alla home</a>
+</body>
+</html>
