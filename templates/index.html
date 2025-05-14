@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Benvenuto nel Gioco Pokémon</h1>
+    <h1>Benvenuto nel Sistema di Prenotazioni</h1>
     <p>Seleziona un'opzione:</p>
     <ul>
-        <li><a href="{{ url_for('aggiungi') }}">aggiungi prenotazione</a></li>
-        
+        <li><a href="{{ url_for('aggiungi') }}">Aggiungi prenotazione</a></li>
     </ul>
-    {% if output %}
-        <p>{{ output }}</p>
 </body>
 </html>
