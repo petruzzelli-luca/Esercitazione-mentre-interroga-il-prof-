@@ -40,6 +40,19 @@ def visualizza():
     prenotazioni = df.to_dict(orient="records")
     return render_template("visualizza_prenotazione.html", prenotazioni=prenotazioni)
 
-
+@app.route("/cerca", methods=["GET", "POST"])
+def cerca():
+    risultati = []
+    if request.method == "POST":
+        nome = request.form.get("nome", "").lower()
+        sport = request.form.get("sport", "").lower()
+        df = pd.read_csv("profile.csv")
+        
+        risultati = df[
+            (df["nome"].str.lower() == nome) & 
+            (df["sport"].str.lower() == sport)
+        ].to_dict(orient="records")
+    
+    return render_template("cerca_prenotazione.html", risultati=risultati)
 if __name__ == '__main__':
     app.run(debug=True)

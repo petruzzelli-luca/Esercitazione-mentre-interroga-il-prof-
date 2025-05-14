@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <h1>Benvenuto nel Sistema di Prenotazioni</h1>
     <p>Seleziona un'opzione:</p>
     <ul>
-        <li><a href="{{ url_for('aggiungi') }}">Aggiungi prenotazione</a></li>
-        <li><a href="{{ url_for('visualizza') }}">Visualizza prenotazioni</a></li>
-       
+        <ul>
+            <li><a href="{{ url_for('aggiungi') }}">Aggiungi prenotazione</a></li>
+            <li><a href="{{ url_for('visualizza') }}">Visualizza prenotazioni</a></li>
+            <li><a href="{{ url_for('cerca') }}">Cerca prenotazione</a></li>
+        </ul>
+
     </ul>
 </body>
+
 </html>

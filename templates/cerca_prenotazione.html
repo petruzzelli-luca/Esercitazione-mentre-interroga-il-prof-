@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerca Prenotazione</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Cerca Prenotazione</h1>
+    <form method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        <label for="sport">Sport:</label>
+        <input type="text" id="sport" name="sport" required><br>
+        <button type="submit">Cerca</button>
+    </form>
+    
+    {% if risultati %}
+        <h2>Risultati:</h2>
+        <ul>
+            {% for prenotazione in risultati %}
+            <li>
+                <b>Nome:</b> {{ prenotazione['nome'] }}<br>
+                <b>Cognome:</b> {{ prenotazione['cognome'] }}<br>
+                <b>Sport:</b> {{ prenotazione['sport'] }}<br>
+                <b>Data e Ora:</b> {{ prenotazione['data e ora'] }}<br>
+                <b>Note Opzionali:</b> {{ prenotazione['note opzionali'] }}
+            </li>
+            <hr>
+            {% endfor %}
+        </ul>
+    {% elif risultati is not none %}
+        <p>Nessuna prenotazione trovata.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('home') }}">Torna alla home</a>
+</body>
+</html>
